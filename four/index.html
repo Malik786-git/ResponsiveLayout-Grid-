@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid 4</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box; text-transform: uppercase; color: ivory; text-align: center;}
+        .wrapped{padding: 10px; height: 100vh; display: flex; flex-direction: column;}
+        .container{
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr;
+            grid-template-rows:0.4fr 0.6fr ;
+            grid-template-areas: "nav nav nav"
+                                 "side1 side2 side3" ;
+            grid-gap:10px;
+            height: 65vh;
+               
+        }
+        nav{background-color: greenyellow; grid-area: nav;}
+          .side1{background-color: rgb(0, 186, 233); grid-area: side1; }
+          .side2{background-color: rgb(0, 186, 233); grid-area: side2; }
+          .side3{background-color: rgb(0, 186, 233); grid-area: side3; }
+
+          .footer{
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "foot1 foot2 foot3 foot4 ";
+            grid-gap:10px;
+      
+            height: 30vh;   
+            margin-top: 10px;  
+            /* background-color: brown;   */
+        }
+          .foot1{background-color: rgba(97, 98, 99, 0.151); grid-area: foot1;}
+          .foot2{background-color: rgba(73, 73, 73, 0.274); grid-area: foot2;}
+          .foot3{background-color: rgba(75, 75, 75, 0.247); grid-area: foot3;}
+          .foot4{background-color: rgba(92, 92, 92, 0.26); grid-area: foot4;}
+        
+     @media screen and (max-width: 768px) {
+        .container{
+            display: grid;
+            grid-template-columns:1fr;
+            grid-template-rows:1.3fr 0.9fr 0.9fr 0.9fr ;
+            grid-template-areas: "nav"
+                                 "side1"
+                                 "side2"
+                                 "side3" ;       
+        }
+            
+        .footer{
+            display: grid;
+            grid-template-columns:1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "foot1 foot2"
+                                 "foot3 foot4" ;
+        }
+}
+@media screen and (max-width: 350px) {
+    .container{
+            display: grid;
+            grid-template-columns:1fr;
+            grid-template-rows:0.7fr 1.1fr 1.1fr 1.1fr ;
+            grid-template-areas: "nav"
+                                 "side1"
+                                 "side2"
+                                 "side3" ;      
+                                 height: 80vh; 
+        }
+            
+        .footer{
+            display: grid;
+            grid-template-columns:1fr;
+            grid-template-rows: 140px;
+            grid-template-areas: "foot1" ;
+            height: 20vh; 
+            /* margin: 0 auto; */
+        }
+        .foot1{margin-left:10px;}
+}
+    </style>
+</head>
+<body>
+<div class="wrapped">
+    <div class="container">
+              <nav></nav>
+              <div class="side1"></div>
+              <div class="side2"></div>
+              <div class="side3"></div>
+           
+    </div>
+    <div class="footer">
+         <div class="foot1"></div>
+         <div class="foot2"></div>
+         <div class="foot3"></div>
+         <div class="foot4"></div>
+    </div>
+</div>
+
+
+</body>
+</html>

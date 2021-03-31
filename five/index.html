@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid 5</title>
+    <style>
+        *{margin: 0; padding: 0;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-transform: uppercase; box-sizing: border-box;
+        color: white; text-align: center;}
+        .container{
+            display: grid;
+            grid-template-columns:0.5fr 0.5fr 1fr;
+            grid-template-rows:0.3fr 1.7fr 1.4fr 0.6fr;
+            grid-template-areas:"header manu manu" 
+                                "hero hero hero"  
+                                "main main section"
+                                "banner banner banner "  ;
+            height: 100vh;
+        }
+        .header{grid-area: header; background-color: rgba(58, 54, 54, 0.952);}
+        .manu{grid-area: manu; background-color: rgba(226, 29, 29, 0.952);}
+        .hero{grid-area: hero; background-color: rgba(55, 125, 216, 0.952);}
+        .main{grid-area: main; background-color: rgba(46, 59, 119, 0.952);}
+        .section{grid-area: section; background-color: rgb(253, 253, 253);}
+        .banner{grid-area: banner; background-color: rgba(190, 173, 16, 0.952);}
+        .image{background: rgb(30, 189, 210); height: 50%; width: 50%; margin-left: auto;}
+        .extra{background: rgba(135, 245, 135, 0.959); height: 50%; width: 50%; margin-left: auto;}
+
+
+/* Responsive */
+        @media screen and (max-width: 768px) {
+            .container{
+            display: grid;
+            grid-template-columns:0.5fr 1.5fr;
+            grid-template-rows:0.3fr 1.7fr 1.4fr 0.8fr 0.8fr;
+            grid-template-areas:"header header" 
+                                "hero hero"  
+                                "manu main"
+                                "manu banner "
+                                 "manu section"  ;
+            height: 100vh;
+        }
+        .section{display: flex; flex-direction: row-reverse;}
+        .image{ height: 100%; width: 30%; }
+        .extra{ height: 100%; width: 70%; }
+      
+}        @media screen and (max-width: 430px) {
+    .container{
+            display: grid;
+            grid-template-columns:1fr;
+            grid-template-rows:0.3fr 0.3fr 1.6fr 1.6fr 0.5fr 1fr;
+            grid-template-areas:"header" 
+                                "manu"  
+                                "hero"
+                                "main "
+                                 "banner"
+                                  "section" ;
+            height: 100vh;
+        }
+        .section{flex-direction:column-reverse;}
+        .image{ width: 100%; }
+        .extra{  width: 100%; }
+  
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+       <div class="header">Header</div>
+       <div class="manu">Menu</div>
+       <div class="hero">Hero</div>
+       <div class="main">Main</div>
+       <div class="section">
+           <div class="image">Image</div>
+           <div class="extra">Extra</div>
+       </div>
+       <div class="banner">Banner</div>
+    </div>
+
+
+
+</body>
+</html>
